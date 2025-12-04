@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RPS Game</title>
+	<script type="module" src="/scripts/m3-app.bundled.js"></script>
+	<script type="module" src="/scripts/animations.module.js"></script>
+	<script type="module" src="/scripts/game.module.js"></script>
+</head>
+<body>
+	<m3-app>
+		<div class="container">
+			<div class="card title">
+				<h1 id="title">
+					<span class="txteff-rck textanim">ROCK</span>
+					<span class="txteff-ppr textanim">PAPER</span>
+					<span class="txteff-scr textanim">SCISSORS</span>
+				</h1>
+				<button class="start medium primary">
+					Start
+				</button>
+				<a href="https://github.com/Kex1016/rps-game" target="_blank" class="github xsmall primary">
+					GitHub
+				</a>
+			</div>
+			<div class="card game">
+				<div id="rps-result"></div>
+				<div class="roundnum-title">Round</div>
+				<div id="roundnum"></div>
+				<div class="players">
+					<div class="card shadow player human">
+						<div class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+						</div>
+						<div class="text" id="human-score">
+							0
+						</div>
+					</div>
+					<div class="card shadow player robot">
+						<div class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot-icon lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+						</div>
+						<div class="text" id="robot-score">
+							0
+						</div>
+					</div>
+				</div>
+				<div class="controls">
+					<button class="rock button large primary" data-item="rock">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mountain-icon lucide-mountain"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+					</button>
+					<button class="paper button large primary" data-item="paper">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+					</button>
+					<button class="scissors button large primary" data-item="scissors">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scissors-icon lucide-scissors"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</m3-app>
+	<!-- m3-app rossz helyre rakja a normalize CSS-t igy ide kell rakjam amig nem csinalom meg :/ -->
+	<link rel="stylesheet" href="/styles/style.css">
+</body>
+</html>
