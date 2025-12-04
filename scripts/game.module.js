@@ -186,7 +186,15 @@ function flashWinner(winner) {
 	humanEl?.classList.remove("flash-win", "flash-lose");
 	robotEl?.classList.remove("flash-win", "flash-lose");
 
-	if (winner === "draw") return;
+	if (winner === "draw") {
+		humanEl.classList.add("flash-draw");
+		robotEl.classList.add("flash-draw");
+		setTimeout(() => {
+			humanEl.classList.remove("flash-draw");
+			robotEl.classList.remove("flash-draw");
+		}, 300);
+		return;
+	}
 
 	const winEl = winner === "human" ? humanEl : robotEl;
 	const loseEl = winner === "human" ? robotEl : humanEl;
@@ -204,7 +212,8 @@ function showResult(player, robot, outcome) {
 	// update scores
 	if (outcome === "win") humanScore++;
 	else if (outcome === "lose") robotScore++;
-	if (outcome !== "draw") updateScoreDisplays(outcome === "win" ? "human" : "robot");
+	if (outcome !== "draw")
+		updateScoreDisplays(outcome === "win" ? "human" : "robot");
 
 	// flash colors
 	const winner =
